@@ -10,5 +10,62 @@ package video;
  * @author Justin
  */
 public class Playlist {
+    /* Container class for the video class. Each object here belongs to the video class */
+    /* Declare array to store video objects */
+    private Video[] list;
+    /* Declare Count variable which keep tracks of number of Videos currently in the collection */
+    private int Count = 0;
+    
+    /* A constructor with arguments to initialize the container class. It accepts an integer to set the size
+    of the array
+    */
+    public Playlist(int size)
+    {
+        /* Set the array size to the argument if the input argument is not negative, else
+        set the array size to 20
+        */
+        if (size >= 0)
+        {
+            list = new Video [size];
+        }
+        else 
+        {
+            list = new Video[20];
+        }
+        /* Set the count to 0 */
+        Count = 0;
+    }
+    
+    /* The addVideo method adds a video object to the array. If the array is full, don't add and return false */
+    /* The return type is boolean */
+    public boolean addVideo(Video video)
+    {
+        if (Count == list.length)
+        {
+            return false;
+        }
+        else
+        {
+            list[Count] = video;
+            Count = Count + 1;
+            return true;
+        }
+    }
+    
+    /* The ShowAllVideos method shows all the information of the videos in the playlist using the toString method */
+    /* Return type is String */
+    public String ShowAllVideos()
+    {
+        /* Initialize string variable to hold all the information */
+        String stringVar = "";
+        for (int i = 0 ; i < list.length; i = i + 1)
+        {
+            stringVar = stringVar + list[i].toString() + "\n";
+            
+        }
+        return stringVar;
+    }
+            
+    
     
 }
