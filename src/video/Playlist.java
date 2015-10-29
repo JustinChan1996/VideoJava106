@@ -86,11 +86,22 @@ public class Playlist {
         return pos;
     }
     
-    /* The showVideosWithMinimum returns an array of videos with greather than or equal to the number of
+    /* The showVideosWithMinimum returns an array of videos with greater than or equal to the number of
     ratings in terms of stars */
-    public String[] showVideoWithMinimum()
+    /* The return type of the function is video object */
+    public Video[] showVideoWithMinimum(int stars)
     {
-        
+        /* Declare array to store videos */
+        Video[] array;
+        /* Loop thrugh the array to search for the videos with ratings greater than or equal to the number of stars */
+        for (int i = 0; i < list.length; i = i + 1)
+        {
+            if (list[i].getRating() >= stars)
+            {
+                /* Add the video to the array */
+                array.
+            }
+        }
     }
     
     
