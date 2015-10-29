@@ -66,6 +66,34 @@ public class Playlist {
         return stringVar;
     }
             
+    /* the searchVideo method searches for the video with the same title as the input argument */
+    /* If no such video exists, return null.
+    /* The return type of the method is an integer value which states the position of the array. */
+    public int searchVideo(String title)
+    {
+        /* Declare variable to hold position of the object in the array */
+        /* Initialize it with the null value which is -1(title not found */
+        int pos = -1;
+        /* Loop through the array to search for the video object with the same title as the input argument */
+        for (int i = 0; i < list.length; i = i + 1)
+        {
+            if (list[i].getTitle().equals(title))
+            {
+                pos = i;
+                break;
+            }
+        }
+        return pos;
+    }
+    
+    /* The showVideosWithMinimum returns an array of videos with greather than or equal to the number of
+    ratings in terms of stars */
+    public String[] showVideoWithMinimum()
+    {
+        
+    }
+    
+    
     
     
 }
