@@ -93,10 +93,32 @@ public class Playlist {
     */
     public String searchVideos(String keyword)
     {
+        /* Declara string variable variable to hold the videos information */
+        String info = null;
         /* Loop through the array to search for videos with matching keywords in any of its attributes */
         for(int i = 0; i < list.length; i = i + 1)
         {
-            
+            /* detect keyword in any of the attributes by searching for the index within the string of the last occurance of the substring */
+            /* Initlialize index position of each attribute to null(-1). */
+            int isTitle = -1;
+            int isGenre = -1;
+            /* Scan attribute for index of substring regardless of case sensitivity */
+            isTitle = list[i].getTitle().lastIndexOf(keyword);
+            isGenre = list[i].getGenre().lastIndexOf(keyword);
+            /* If the index of the substring exists in both attributes, add the video informaiton to the string*/
+            if ((isTitle >= 0) || (isGenre >= 0))
+            {
+                info = info + list[i].toString() + "\n";
+            }
+        }
+        /* Return the string if the string is not null, otherwise, display no videos with this keyword found */
+        if (info != null)
+        {
+            return "No videos with this keyword";
+        }
+        else
+        {
+            return info;
         }
     }
         
