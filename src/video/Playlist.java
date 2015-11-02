@@ -66,10 +66,10 @@ public class Playlist {
         return stringVar;
     }
             
-    /* the searchVideo method searches for the video with the same title as the input argument */
+    /* the getVideo method searches for the video with the same title as the input argument */
     /* If no such video exists, return null.
     /* The return type of the method is an integer value which states the position of the array. */
-    public int searchVideo(String title)
+    public int getVideo(String title)
     {
         /* Declare variable to hold position of the object in the array */
         /* Initialize it with the null value which is -1(title not found */
@@ -86,6 +86,17 @@ public class Playlist {
         return pos;
     }
     
+    /* The searchVideos method accepts a keyword and searches for all videos with the keyword as a substring in
+    all its text attributes */
+    /* The method returns a string containing all the information about the videos which have matching keywords. */
+    /* If there are no videos with matching keywords, return the String "no matching videos found ".
+    */
+    public String searchVideos(String keyword)
+    {
+        
+    }
+        
+    
     /* The showVideosWithMinimum returns an array of videos with greater than or equal to the number of
     ratings in terms of stars */
     /* The return type of the function is video object */
@@ -99,7 +110,7 @@ public class Playlist {
             if (list[i].getRating() >= stars)
             {
                 /* Add the video to the array */
-                array.
+                
             }
         }
     }
