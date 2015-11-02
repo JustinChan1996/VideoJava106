@@ -149,8 +149,8 @@ public class Playlist {
         else 
         {
             /* Create an array with the same size as the arraylist */
-            Video returnArray[] = arraylist.toArray(new Video[arraylist.size()]);
             /* Copy all the contents of the arraylist to the array */
+            Video returnArray[] = arraylist.toArray(new Video[arraylist.size()]);
             /* Return the array */
             return returnArray;
         }
