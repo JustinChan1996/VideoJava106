@@ -93,7 +93,11 @@ public class Playlist {
     */
     public String searchVideos(String keyword)
     {
-        
+        /* Loop through the array to search for videos with matching keywords in any of its attributes */
+        for(int i = 0; i < list.length; i = i + 1)
+        {
+            
+        }
     }
         
     
