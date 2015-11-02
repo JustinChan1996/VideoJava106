@@ -9,6 +9,7 @@ package video;
  *
  * @author Justin
  */
+import java.util.*;
 public class Playlist {
     /* Container class for the video class. Each object here belongs to the video class */
     /* Declare array to store video objects */
@@ -103,8 +104,8 @@ public class Playlist {
             int isTitle = -1;
             int isGenre = -1;
             /* Scan attribute for index of substring regardless of case sensitivity */
-            isTitle = list[i].getTitle().lastIndexOf(keyword);
-            isGenre = list[i].getGenre().lastIndexOf(keyword);
+            isTitle = list[i].getTitle().toLowerCase().lastIndexOf(keyword.toLowerCase());
+            isGenre = list[i].getGenre().toLowerCase().lastIndexOf(keyword.toLowerCase());
             /* If the index of the substring exists in both attributes, add the video informaiton to the string*/
             if ((isTitle >= 0) || (isGenre >= 0))
             {
@@ -112,7 +113,7 @@ public class Playlist {
             }
         }
         /* Return the string if the string is not null, otherwise, display no videos with this keyword found */
-        if (info != null)
+        if (info == null)
         {
             return "No videos with this keyword";
         }
@@ -126,18 +127,33 @@ public class Playlist {
     /* The showVideosWithMinimum returns an array of videos with greater than or equal to the number of
     ratings in terms of stars */
     /* The return type of the function is video object */
-    public Video[] showVideoWithMinimum(int stars)
+    public ArrayList<Video> showVideoWithMinimum(int stars)
     {
-        /* Declare array to store videos */
-        Video[] array;
-        /* Loop thrugh the array to search for the videos with ratings greater than or equal to the number of stars */
+        /* Use an arraylist to store all the videos that satify the requirements */
+        /* Initialize arraylist to store all the objects */
+        ArrayList<Video> arraylist = new ArrayList<Video>();
+        /* Use a loop to scan through all the objects and add the items to the arraylist object */
         for (int i = 0; i < list.length; i = i + 1)
         {
+            /* if the video's rating satisfy the input requirements, add it to the arraylist object */
             if (list[i].getRating() >= stars)
             {
-                /* Add the video to the array */
-                
+                arraylist.add(list[i]);
             }
+        }
+        /* After scanning through the loop, if the arraylist is empty, return null, otherwise add it to the array */
+        if (arraylist.isEmpty())
+        {
+            return null;
+        }
+        else 
+        {
+            /* Create an array with the same size as the arraylist */
+            Video[] returnArray = new Video[arraylist.size()];
+            /* Copy all the contents of the arraylist to the array */
+            arraylist.toArray(returnArray);
+            /* Return the array */
+            return arraylist;
         }
     }
     
