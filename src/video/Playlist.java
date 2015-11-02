@@ -127,7 +127,7 @@ public class Playlist {
     /* The showVideosWithMinimum returns an array of videos with greater than or equal to the number of
     ratings in terms of stars */
     /* The return type of the function is video object */
-    public ArrayList<Video> showVideoWithMinimum(int stars)
+    public Video[] showVideoWithMinimum(int stars)
     {
         /* Use an arraylist to store all the videos that satify the requirements */
         /* Initialize arraylist to store all the objects */
@@ -149,11 +149,10 @@ public class Playlist {
         else 
         {
             /* Create an array with the same size as the arraylist */
-            Video[] returnArray = new Video[arraylist.size()];
+            Video returnArray[] = arraylist.toArray(new Video[arraylist.size()]);
             /* Copy all the contents of the arraylist to the array */
-            arraylist.toArray(returnArray);
             /* Return the array */
-            return arraylist;
+            return returnArray;
         }
     }
     
