@@ -95,7 +95,7 @@ public class Playlist {
     public String searchVideos(String keyword)
     {
         /* Declara string variable variable to hold the videos information */
-        String info = null;
+        String info = "";
         /* Loop through the array to search for videos with matching keywords in any of its attributes */
         for(int i = 0; i < list.length; i = i + 1)
         {
@@ -113,7 +113,7 @@ public class Playlist {
             }
         }
         /* Return the string if the string is not null, otherwise, display no videos with this keyword found */
-        if (info == null)
+        if (info.isEmpty())
         {
             return "No videos with this keyword";
         }
