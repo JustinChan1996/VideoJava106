@@ -153,9 +153,42 @@ public class Playlist {
             Video returnArray[] = arraylist.toArray(new Video[arraylist.size()]);
             /* Return the array */
             return returnArray;
+        }
     }
-    
-    
-    
+        
+    /* The showRatingSumary method shows the summary information about the movie ratings in the playlist */
+    /* It displays the number of movies that recieives each category of rating from 1 to 5*/
+    /* The return type is a string containing all the summary information */
+    public String showRatingSummary()
+    {
+	/* Initialize variables to store number of ratings */
+	int oneStar = 0;
+	int twoStar = 0;
+	int threeStar = 0;
+	int fourStar = 0;
+	int fiveStar = 0;
+	/* Loop through the array and increment each counter whenever each citeria is fullfiled */
+	for (int i = 0; i < list.length; i = i + 1)
+	{
+		switch (list[i].getRating())
+		{
+			case 1: oneStar = oneStar + 1;
+				break;
+			case 2: twoStar = twoStar + 1;
+				break;
+			case 3: threeStar = threeStar + 1;
+				break;
+			case 4: fourStar = fourStar + 1;
+				break;
+			case 5: fiveStar = fiveStar + 1;
+				break;
+		}
+	}
+	/* Return the summary information as a string */
+	return "Summary information for video ratings in the playlist" + "\n" + "1 stars: " + 		oneStar + "\n" + "2 stars: " + twoStar + "\n" + "3 stars: " + threeStar + "\n" + "4 stars: " + fourStar + "\n" + "5 stars: " + fiveStar + "\n";
     }
 }
+        
+    
+    
+    
