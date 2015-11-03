@@ -96,7 +96,7 @@ public class Video {
         int hours = length / 60;
         /* Then find the number of remainign minutes */
         int minutes = length % 60;
-        return "Video:" + title + "  Genre:" + genre + "  Rating:" + rating + " stars" + "  Length:" + hours + " hours " + minutes + " minutes";   
+        return "Video: " + title + "     Genre: " + genre + "     Rating: " + rating + " stars" + "     Length: " + hours + " hours " + minutes + " minutes";   
     }
     
 }
