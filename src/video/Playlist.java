@@ -27,7 +27,7 @@ public class Playlist {
         */
         if (size >= 0)
         {
-            list = new Video [size -1];
+            list = new Video [size];
         }
         else 
         {
