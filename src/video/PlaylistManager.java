@@ -82,8 +82,6 @@ public class PlaylistManager {
                     {
                         System.out.println("The playlist is full, video addition failed ");
                     }
-                    
-                      
             case "2":
             case "3":
             case "4":

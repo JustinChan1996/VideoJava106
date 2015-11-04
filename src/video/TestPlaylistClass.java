@@ -35,6 +35,8 @@ public class TestPlaylistClass {
         playlist.addVideo(video9);
         Video video10 = new Video("King Kong","Triller",5,130);
         playlist.addVideo(video10);
+        Video video11 = new Video("King King","Triller",5,130);
+        playlist.addVideo(video11);
         // Test the ShowAllVideos function (Successful)
         System.out.println(playlist.ShowAllVideos());
         // Test the getVideo function
