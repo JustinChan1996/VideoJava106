@@ -15,7 +15,10 @@ public class PlaylistManager {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        // TODO code application logic here
+        /* This is the main class which will allow the user to create a playlist, add videos and remove videos from */
+        /* the playlist and find a video. */
+        /* Create a playlist object with a value of 4 */
+        
         
     }
     
