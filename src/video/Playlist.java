@@ -59,7 +59,7 @@ public class Playlist {
     {
         /* Initialize string variable to hold all the information */
         String stringVar = "";
-        for (int i = 0 ; i < list.length; i = i + 1)
+        for (int i = 0 ; i < Count; i = i + 1)
         {
             stringVar = stringVar + list[i].toString() + "\n";
             
@@ -76,7 +76,7 @@ public class Playlist {
         /* Initialize it with the null value which is -1(title not found */
         int pos = -1;
         /* Loop through the array to search for the video object with the same title as the input argument */
-        for (int i = 0; i < list.length; i = i + 1)
+        for (int i = 0; i < Count; i = i + 1)
         {
             if (list[i].getTitle().equals(title))
             {
@@ -97,7 +97,7 @@ public class Playlist {
         /* Declara string variable variable to hold the videos information */
         String info = "";
         /* Loop through the array to search for videos with matching keywords in any of its attributes */
-        for(int i = 0; i < list.length; i = i + 1)
+        for(int i = 0; i < Count; i = i + 1)
         {
             /* detect keyword in any of the attributes by searching for the index within the string of the last occurance of the substring */
             /* Initlialize index position of each attribute to null(-1). */
@@ -133,7 +133,7 @@ public class Playlist {
         /* Initialize arraylist to store all the objects */
         ArrayList<Video> arraylist = new ArrayList<Video>();
         /* Use a loop to scan through all the objects and add the items to the arraylist object */
-        for (int i = 0; i < list.length; i = i + 1)
+        for (int i = 0; i < Count; i = i + 1)
         {
             /* if the video's rating satisfy the input requirements, add it to the arraylist object */
             if (list[i].getRating() >= stars)
@@ -168,7 +168,7 @@ public class Playlist {
 	int fourStar = 0;
 	int fiveStar = 0;
 	/* Loop through the array and increment each counter whenever each citeria is fullfiled */
-	for (int i = 0; i < list.length; i = i + 1)
+	for (int i = 0; i < Count; i = i + 1)
 	{
 		switch (list[i].getRating())
 		{

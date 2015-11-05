@@ -51,7 +51,7 @@ public class PlaylistManager {
                     String title = input.nextLine();
                     System.out.print("Genre: ");
                     String genre = input.nextLine();
-                    /* Intialize rating variable(number of stars) */
+                    /* Intialize rating varable(number of stars) */
                     int rating = 0;
                     /*For the rating variable, make sure the value is between 1 and 5 */
                     do
@@ -83,21 +83,30 @@ public class PlaylistManager {
                     {
                         System.out.println("The playlist is full, video addition failed ");
                     }
+                    input.nextLine();
                     break;
                     
             case "2":
                 
                     /* If user selects option number 2, display the information of all videos in the playlist */
-                    System.out.println("Information about the videos in the playlist");
-                    System.out.println(playlist.ShowAllVideos());
+                    System.out.println("Information about the videos in the playlist" + "\n");
+                    System.out.print(playlist.ShowAllVideos());
                     break;
                 
             case "3":
+                
+                    /* if the user selects the 3rd option, allow the user to change the movie attributes */
+                    /* Gather movie title from the user */
+                    System.out.println("Edit movie attributes");
+                    System.out.println("Select movie title: ");
+                    String name = input.nextLine();
+                    /* Check if movie title is in the playlist */
+                    
+                            
             case "4":
             case "5":
             case "6":    
         }
-        input.nextLine();
         }
         while (!menu.equalsIgnoreCase("0"));
         System.out.println("Thank you for using the program");
