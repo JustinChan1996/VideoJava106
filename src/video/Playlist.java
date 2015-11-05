@@ -25,7 +25,7 @@ public class Playlist {
         /* Set the array size to the argument if the input argument is not negative, else
         set the array size to 20
         */
-        if (size >= 0)
+        if (size > 0)
         {
             list = new Video [size];
         }
