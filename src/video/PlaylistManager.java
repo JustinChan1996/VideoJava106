@@ -136,9 +136,67 @@ public class PlaylistManager {
                     }
                             
             case "4":
+                    
+                    /* If the user selects the 4th option, display the summary information about the movie ratings in the playlist */
+                    System.out.println(playlist.showRatingSummary());
+                    break;
+                
             case "5":
+                
+                    /* If the user selects the 5th option, */
+                    /* show the details of all the Videos with ANY non-numeric attribute that matches this keyword. */
+                    /* If no Videos are found, show an error message. */
+                    String keyword;
+                    System.out.print("Enter keyword to search videos: ");
+                    keyword = input.nextLine();
+                    /* Search playlist for videos with the keyword */
+                    System.out.println(playlist.searchVideos(keyword));
+                    break;
+                
             case "6":
+                
+                    /* If the user selects the 6th option, show the videos with the minimum of stars(ratings) that is selected by the user */
+                    int stars = 0;
+                    System.out.print("Enter the minimum amount of stars(from 1 to 5): ");
+                    stars = input.nextInt();
+                    /* Only perform operation if input is greater than zero but less or equal to 5 */
+                    if ((stars > 0) && (stars <= 5))
+                    {
+                        /* Create video array to store the objects from the showVideosWithMinimum() function */
+                        Video[] minimumStars;
+                        minimumStars = playlist.showVideosWithMinimum(stars);
+                        /* if array is null, display error message, otherwise, display the title and value of videos with the minimum stars */
+                        if (minimumStars == null)
+                        {
+                            System.out.println("No videos satisfy the input requirements");
+                        }
+                        else
+                        {
+                            /* Print the header */
+                            System.out.println("Movies with ratings of " + stars + " or greater" + "\n");
+                            /* Loop through the array to print the movie's title and value */
+                            for (int i = 0; i < minimumStars.length; i = i + 1)
+                            {
+                                System.out.println("Title: " + minimumStars[i].getTitle());
+                                /* Find the length and find its hours and minutes */
+                                int movieLength = minimumStars[i].getLength();
+                                int hours = movieLength / 60;
+                                int minutes = movieLength % 60;
+                                System.out.println("Length: " + hours + " hours " + minutes + "minutes" + "\n");
+                            }
+                        }
+                    }
+                    else
+                    {
+                        /* Print error message if input value is invalid */
+                        System.out.println("Input value is invalid");
+                    }
+                    input.nextLine();
+                    break;
+                
             default:
+                
+                    /* If the user types anything other than 1 to 6, display an error message */
                     System.out.println("Invalid option");
         }
         }
