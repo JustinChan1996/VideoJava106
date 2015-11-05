@@ -101,11 +101,45 @@ public class PlaylistManager {
                     System.out.println("Select movie title: ");
                     String name = input.nextLine();
                     /* Check if movie title is in the playlist */
-                    
+                    int position = playlist.getVideo(name);
+                    /* if position is null, display error mesage */
+                    if (position == -1)
+                    {
+                        System.out.println("Movie not found");
+                    }
+                    else
+                    {
+                        /* Present option to the users to change the attributes */
+                        System.out.println("Select attributes to modify:");
+                        System.out.println("1. Title");
+                        System.out.println("2. Genre");
+                        System.out.println("3. Rating");
+                        System.out.println("4. Movie Length");
+                        System.out.println("Option: ");
+                        String optionModify = input.nextLine();
+                        /* Change atribute based on user's option */
+                        switch (optionModify)
+                        {
+                            case "1":
+                                
+                                    /* Let user change title */
+                                    String newtitle = "";
+                                    System.out.println("New title: ");
+                                    newtitle = input.nextLine();
+                                    
+                            case "2":
+                            case "3":
+                            case "4":
+                            default:
+                                    System.out.println("Invalid option");
+                        }
+                    }
                             
             case "4":
             case "5":
-            case "6":    
+            case "6":
+            default:
+                    System.out.println("Invalid option");
         }
         }
         while (!menu.equalsIgnoreCase("0"));
