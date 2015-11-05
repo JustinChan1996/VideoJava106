@@ -44,7 +44,7 @@ public class PlaylistManager {
             {
                 case "1":
                 
-                    /* if user selects option one, allow uset to enter video information to be added to the playlist */
+                    /* if user selects option 1, allow uset to enter video information to be added to the playlist */
                     /* Display prompt to enter information */
                     System.out.println("Enter video information");
                     System.out.print("Title: ");
@@ -73,7 +73,8 @@ public class PlaylistManager {
                     /* Initialize a video object with the information provided */
                     Video video = new Video(title,genre,rating,length);
                     /* Add the video object to the array if the array is not full*/
-                    if (playlist.addVideo(video))
+                    boolean bool = playlist.addVideo(video);
+                    if (bool == true)
                     {
                         /* the playlist methods returns true if the array is not full */
                         System.out.println("Movie: " + title + " Successfully added to the playlist");
@@ -82,12 +83,21 @@ public class PlaylistManager {
                     {
                         System.out.println("The playlist is full, video addition failed ");
                     }
+                    break;
+                    
             case "2":
+                
+                    /* If user selects option number 2, display the information of all videos in the playlist */
+                    System.out.println("Information about the videos in the playlist");
+                    System.out.println(playlist.ShowAllVideos());
+                    break;
+                
             case "3":
             case "4":
             case "5":
             case "6":    
         }
+        input.nextLine();
         }
         while (!menu.equalsIgnoreCase("0"));
         System.out.println("Thank you for using the program");
