@@ -98,17 +98,19 @@ public class PlaylistManager {
                     /* if the user selects the 3rd option, allow the user to change the movie attributes */
                     /* Gather movie title from the user */
                     System.out.println("Edit movie attributes");
-                    System.out.println("Select movie title: ");
+                    System.out.print("Select movie title: ");
                     String name = input.nextLine();
-                    /* Check if movie title is in the playlist */
-                    int position = playlist.getVideo(name);
-                    /* if position is null, display error mesage */
-                    if (position == -1)
+                    /* Get video from playlist */
+                    Video selectedVideo = playlist.getVideo(name);
+                    /* if video object is null, display error message */
+                    if (selectedVideo == null)
                     {
                         System.out.println("Movie not found");
                     }
                     else
                     {
+                        /* If movvie is present, show video attributes */
+                        System.out.println(selectedVideo.toString());
                         /* Present option to the users to change the attributes */
                         System.out.println("Select attributes to modify:");
                         System.out.println("1. Title");
@@ -124,14 +126,69 @@ public class PlaylistManager {
                                 
                                     /* Let user change title */
                                     String newtitle = "";
-                                    System.out.println("New title: ");
+                                    System.out.print("New title: ");
                                     newtitle = input.nextLine();
+                                    /* Save changes to edited title */
+                                    selectedVideo.setTitle(newtitle);
+                                    System.out.println("Title for the video is successfully edited");
+                                    break;
                                     
                             case "2":
+                                
+                                    /* Let user change genre */
+                                    String newGenre = "";
+                                    System.out.print("New genre: ");
+                                    newGenre = input.nextLine();
+                                    /* Save changes to edited title */
+                                    selectedVideo.setGenre(newGenre);
+                                    System.out.println("Genre for the video is successfully edited");
+                                    break;
+                                
                             case "3":
+                                
+                                    /* Let user change rating */
+                                    int newRating = 0;
+                                    System.out.print("New rating(1-5 stars): ");
+                                    newRating = input.nextInt();
+                                    /* Check if user input is within acceptable range */
+                                    if ((newRating > 0) && (newRating <= 5))
+                                    {
+                                        /* Save changes to the edited rating */
+                                        selectedVideo.setRating(newRating);
+                                        System.out.println("Rating for the video is successfully edited");
+                                    }
+                                    else
+                                    {
+                                        /* If the user input is invalid, display error message and do not record change */
+                                        System.out.println("Invalid input, changes will not be recorded");
+                                    }
+                                    break;
+                            
                             case "4":
+                                
+                                    /* Let user change duration of video */
+                                    int newLength = 0;
+                                    System.out.print("New Duration(minutes): ");
+                                    newLength = input.nextInt();
+                                    /* Check if user input is within acceptable range */
+                                    if (newLength > 0)
+                                    {
+                                        /* Save changes to the edited rating */
+                                        selectedVideo.setLength(newLength);
+                                        System.out.println("Length of the video is successfully edited");
+                                    }
+                                    else
+                                    {
+                                        /* If the user input is invalid, display error message and do not record change */
+                                        System.out.println("Invalid input, changes will not be recorded");
+                                    }
+                                    break;
+                                    
+                                
                             default:
                                     System.out.println("Invalid option");
+                                    System.out.println("Returning to main menu");
+                                    break;
                         }
                     }
                             

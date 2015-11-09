@@ -70,21 +70,21 @@ public class Playlist {
     /* the getVideo method searches for the video with the same title as the input argument */
     /* If no such video exists, return null.
     /* The return type of the method is an integer value which states the position of the array. */
-    public int getVideo(String title)
+    public Video getVideo(String title)
     {
-        /* Declare variable to hold position of the object in the array */
-        /* Initialize it with the null value which is -1(title not found */
-        int pos = -1;
+        /* Declare video variable */
+        /* Initialize it with the null value */
+        Video video = null;
         /* Loop through the array to search for the video object with the same title as the input argument */
         for (int i = 0; i < Count; i = i + 1)
         {
             if (list[i].getTitle().equals(title))
             {
-                pos = i;
+                video = list[i];
                 break;
             }
         }
-        return pos;
+        return video;
     }
     
     /* The searchVideos method accepts a keyword and searches for all videos with the keyword as a substring in
