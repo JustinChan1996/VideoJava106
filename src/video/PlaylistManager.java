@@ -109,6 +109,9 @@ public class PlaylistManager {
                     }
                     else
                     {
+                        String optionModify = "";
+                        do
+                        {
                         /* If movvie is present, show video attributes */
                         System.out.println("\n" + selectedVideo.toString());
                         /* Present option to the users to change the attributes */
@@ -117,8 +120,9 @@ public class PlaylistManager {
                         System.out.println("2. Genre");
                         System.out.println("3. Rating");
                         System.out.println("4. Movie Length");
+                        System.out.println("Type 0 to quit");
                         System.out.print("Option: ");
-                        String optionModify = input.nextLine();
+                        optionModify = input.nextLine();
                         /* Change atribute based on user's option */
                         switch (optionModify)
                         {
@@ -187,12 +191,13 @@ public class PlaylistManager {
                                 
                             default:
                                     System.out.println("Invalid option");
-                                    System.out.println("Returning to main menu");
                                     break;
                         }
-                    }
-                    break;
-                            
+                        }
+                        while(!optionModify.equals("0"));
+            }
+            break;
+                
             case "4":
                     
                     /* If the user selects the 4th option, display the summary information about the movie ratings in the playlist */
