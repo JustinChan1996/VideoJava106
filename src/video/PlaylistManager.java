@@ -110,14 +110,14 @@ public class PlaylistManager {
                     else
                     {
                         /* If movvie is present, show video attributes */
-                        System.out.println(selectedVideo.toString());
+                        System.out.println("\n" + selectedVideo.toString());
                         /* Present option to the users to change the attributes */
                         System.out.println("Select attributes to modify:");
                         System.out.println("1. Title");
                         System.out.println("2. Genre");
                         System.out.println("3. Rating");
                         System.out.println("4. Movie Length");
-                        System.out.println("Option: ");
+                        System.out.print("Option: ");
                         String optionModify = input.nextLine();
                         /* Change atribute based on user's option */
                         switch (optionModify)
@@ -191,6 +191,7 @@ public class PlaylistManager {
                                     break;
                         }
                     }
+                    break;
                             
             case "4":
                     
@@ -207,7 +208,7 @@ public class PlaylistManager {
                     System.out.print("Enter keyword to search videos: ");
                     keyword = input.nextLine();
                     /* Search playlist for videos with the keyword */
-                    System.out.println(playlist.searchVideos(keyword));
+                    System.out.println("\n" + playlist.searchVideos(keyword));
                     break;
                 
             case "6":
